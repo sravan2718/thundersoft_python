@@ -1,0 +1,11 @@
+a=5
+b=6
+c=a<b
+print(c)
+True
+print(type(c))
+print(int(c))
+print(int(true))
+print(int(false))
+print(true+false)
+print(4+true)
