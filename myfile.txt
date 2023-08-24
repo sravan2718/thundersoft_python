@@ -1,1 +1,6 @@
-Tomorrow 
+Hello 
+This is Delhi 
+This is Paris 
+This is London 
+
+Writing to file:)

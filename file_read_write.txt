@@ -1,7 +1,0 @@
-This is first line. 
-This is another line to store into file.
-The Third Line for the file.
-Another line... !@#$%^&*()_+.
-End Line
-
-This is a new line. This line will be appended. 
