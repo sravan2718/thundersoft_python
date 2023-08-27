@@ -1,50 +1,53 @@
-#example:Try with else clause
 
-
-#function whichn returns a/b
-def AbyB(a , b):
-    try:
-        c = ((a+b) / (a-b))
-    except ZeroDivisionError:
-        print ("a/b result in 0")
-    else:
-        print(c)
-#driver program to test above function
-AbyB(2.0, 3.0)
-AbyB(3.0, 3.0)
-
-
-#Example:
-
-# no exception Exception raised in try block
+# even odd index:
 try:
-    k = 5//0 #raised divide by Zero exception.
-    print(k)
+    
+    even_numbers = [2,4,6,8]
+    print(even_numbers[5])
 
-# handles zerodivision 
 except ZeroDivisionError:
-    print("can't division by zerO")
-finally:
-    #this block is always excuted
-    #regardless of exception generation.
-    print('this is always excuted')
+    print("Denominator cannot be 0.")
+    
+except IndexError:
+    print("Index Out of Bound.")
 
-
-#another example:
-
-#program to print the reciprocal of even numbers
+#except block:
 
 try:
-    num = int(input("enter a number: "))
-    assert num % 2 == 0
-except:
-    print("not an even number!")
-else:
-    reciprocal = 1/num
-    print(reciprocal)
+ a = int(input("Enter Num1:"))
+ b = int(input("Enter Num2:"))
+ print("result is:", a * b)
+ print("result is:", a / b)
+ print("result is:", a + b)
+ print("result is:", a - b)
+except ZeroDivisionError as msg:
+ print(msg)
 
-# lets see an example:
-
+#except block multiple:
+ 
+try:
+ a = int(input("Enter Num1:"))
+ b = int(input("Enter Num2:"))
+ print("result is:", a / b)
+ print("result is:", a * b)
+ print("result is:", a - b)
+ print("result is:", a + b)
+except ZeroDivisionError as msg:
+ print(msg)
+except ValueError as msg:
+ print(msg)
+ 
+#except block  multiple single:
+ 
+try:
+ a = int(input("Enter Num1:"))
+ b = int(input("Enter Num2:"))
+ print("result is:", a / b)
+except(ZeroDivisionError,ValueError)as msg:
+ print(msg)
+ 
+#example exception handling:
+ 
 try:
     numerator = 10
     denominator = 0
@@ -53,57 +56,95 @@ try:
 
     print(result)
 except:
-    print("error denominator cannot be 0.")
+    print("Error: Denominator cannot be 0.")
 
+#finally example:
+    
+try:
+ print("try block")
+except:
+ print("except block")
 finally:
-    print("this is finnaly block.")
+ print("finally block")
 
 
-#examples:try, except, else, finaally blocks:
+#finally nested :
 
 try:
-    x,y = 10, 2
-    z =x/y
-except ZeroDivisionError:
-    print("except zerodivisionerror block")
-    print("division by 0 not accepted")
+ print("try block")
 except:
-    print('some error occured.')
-else:
-    print("division = ",z)
+ print("except block")
 finally:
-    print("excuting finally block")
-    x=0
-    y=0
-    print("out of try, except, else and finally blocks")
+ print("finally block")
 
-# raise an exception:
-
-x,y=100,2
-z=x/2
-if z > 10:
-    raise valueError(z)
-except valueError:
-    print(z, "is out of allowed range")
+#example:
+try:
+   result = 1/3
+except ZeroDivisionError as err:
+   print(err)
 else:
-    print(z, "is within the allowed range")
+   print(f"Your answer is {result}")
 
+#example: 
+try:
+    a=5
+    b='0'
+    print(a/b)
+except:
+    print('Some error occurred.')
+print("Out of try except blocks.")
 
 #example:
 
 try:
-    raise Exception('spam', 'eggs')
-except Exception as inst:                    
-      print(type(inst))
-      print(inst.args)
-      print(inst)
+  a=5
+  b='0'
+  print(a+b)
+except TypeError:
+  print('TypeError Occurred')
+except:
+  print('Some error occurred.')  
+print ("Out of try except blocks")
+
+#default except blocks:
+
+try:
+  a=5
+  b='0'
+  print(a+b)
+except:
+  print('Some error occurred.') 
+except TypeError:
+  print('TypeError Occurred')
+print ("Out of try except blocks")
+
+#multiple except blocks:
+
+try:
+    a=5
+    b=0
+    print (a/b)
+except TypeError:
+    print('Unsupported operation')
+except ZeroDivisionError:
+    print ('Division by zero not allowed')
+except:
+  print('Some error occurred.')
+print ('Out of try except blocks')
 
 
-      x, y = inst.args
-      print('x =', x)
-      print('y =',y)
-    
-          
+
+
+       
+
+
+
+
+
+
+
+
+
 
 
 
